@@ -21,8 +21,6 @@ export default function App() {
     const [lang, setLang] = useState('');
     const apiToken = useSelector(selectUserToken);
 
-    console.log('********************* ENV ************************', 'api = ' + process.env.API_HOST, 'env = ', process.env);
-
 
     useEffect(() => {
         if (lang !== i18next.language || lang === '') {
