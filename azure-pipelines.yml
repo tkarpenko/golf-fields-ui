@@ -17,7 +17,9 @@ pool:
 
 stages:
 - stage: CI
+
   jobs:
+
   - job: Build
     displayName: Build
     steps:
@@ -39,6 +41,14 @@ stages:
     dependsOn: Build
     condition: succeeded()
     steps:
+
+    - script: |
+        npm install
+      displayName: 'npm install'
+
+    - script: |
+        npm run build
+      displayName: 'npm build'
 
     - task: Npm@1
       displayName: npm run test
