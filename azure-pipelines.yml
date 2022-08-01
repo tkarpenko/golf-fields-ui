@@ -33,14 +33,14 @@ steps:
   condition: succeeded()
   inputs:
     command: 'custom'
-    workingDir: '$(Build.SourcesDirectory)/build/reports'
+    # workingDir: ''
     customCommand: 'run test:ci'
 
 - task: PublishTestResults@2
   displayName: 'supply npm test results to pipelines'
   condition: succeededOrFailed()
   inputs:
-    testResultsFiles: '$(Build.SourcesDirectory)/build/reports/junit.xml'
+    testResultsFiles: 'build/reports/junit.xml'
 
 - task: ArchiveFiles@2
   inputs:
