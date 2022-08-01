@@ -52,14 +52,14 @@
   border-radius: 3px;
   display: inline-block;
   padding: 0 35px 1px 35px;
-  color: #fff;
+  color: #5C8146;
   border: 0;
   width: 220px;
   box-shadow: none;
-  background: #52bad5;
+  background: #BEEDAE;
 }
 .button:hover {
-  background: #30a6c4;
+  background: #87ed65;
 }
 
 .button.rubber {

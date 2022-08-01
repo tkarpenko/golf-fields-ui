@@ -1,3 +1,7 @@
+html {
+  min-height: 100%;
+}
+
 body {
   -webkit-font-smoothing: antialiased; /* to prevent flicker in Safari when CSS Transition works */
   width: 100%;
@@ -63,4 +67,10 @@ button {
 
 :focus {
   outline: 0;
+}
+
+body.login-page {
+  background: url('./assets/img/bg.jpg') no-repeat bottom center;
+  background-size: cover;
+  height: 100%;
 }

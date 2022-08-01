@@ -1,17 +1,19 @@
 .language_container {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 40px;
+    width: 220px;
     height: 55px;
-    border-top: 1px solid rgba(0,0,0,0.08);
+    margin-top:40px;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.5);
 }
 
 .language_button {
     height: 45px;
     width: 45px;
     font-size: 24px;
-    color: rgba(0,0,0,0.4);
+    color: rgba(255,255,255,0.6);
 }
 
 .language_dropdown_container {
@@ -20,8 +22,9 @@
 
 .language_dropdown {
     position: absolute;
-    bottom: 55px;
-    width: 200px;
+    top: 0;
+    left: 50px;
+    width: 170px;
     background-color: #fff;
     box-shadow: 0 1px 16px rgba(0,0,0,0.08);
     display: none;
