@@ -36,11 +36,11 @@ steps:
     # workingDir: ''
     customCommand: 'run test:ci'
 
-# - task: PublishTestResults@2
-#   displayName: 'supply npm test results to pipelines'
-#   condition: succeededOrFailed()
-#   inputs:
-#     testResultsFiles: 'build/reports/junit.xml'
+- task: PublishTestResults@2
+  displayName: 'supply npm test results to pipelines'
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFiles: '$(System.DefaultWorkingDirectory)/build/reports/junit.xml'
 
 
 - task: PublishCodeCoverageResults@1
@@ -51,7 +51,7 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)/build'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
