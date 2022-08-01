@@ -42,6 +42,12 @@ steps:
   inputs:
     testResultsFiles: 'build/reports/junit.xml'
 
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage'
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(Build.SourcesDirectory)/**/*cobertura-coverage.xml'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)/build'
