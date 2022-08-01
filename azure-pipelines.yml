@@ -36,20 +36,6 @@ stages:
         npm run build
       displayName: 'npm build'
 
-  - job: Testing
-    displayName: Unit Testing
-    dependsOn: Build
-    condition: succeeded()
-    steps:
-
-    - script: |
-        npm install
-      displayName: 'npm install'
-
-    - script: |
-        npm run build
-      displayName: 'npm build'
-
     - task: Npm@1
       displayName: npm run test
       condition: succeeded()
@@ -69,13 +55,9 @@ stages:
         codeCoverageTool: Cobertura
         summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
 
-  - job: Publish
-    displayName: Publish Artifacts
-    dependsOn: Testing
-    condition: succeeded()
-    steps:
     - task: ArchiveFiles@2
       displayName: Archive Build Files
+      condition: succeeded()
       inputs:
         rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
         includeRootFolder: true
@@ -84,6 +66,7 @@ stages:
         replaceExistingArchive: true
 
     - task: PublishBuildArtifacts@1
+      condition: succeeded()
       displayName: 'Publish Build Artifacts'
       inputs: 
         pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
