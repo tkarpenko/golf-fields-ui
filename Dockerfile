@@ -19,6 +19,6 @@ RUN npm run build
 # use Apache Web Server
 FROM httpd:2.4
 
-COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+# COPY httpd.conf /usr/local/apache2/conf/httpd.conf
 
 COPY --from=builder /app/build /usr/local/apache2/htdocs/
