@@ -1,5 +1,6 @@
 import App from './App';
-import {render, screen} from '@testing-library/react';
+import { screen} from '@testing-library/react';
+import { renderWithProviders } from './utils/test-utils';
 
 import {
     Routes as RoutesMock,
@@ -67,7 +68,7 @@ describe('App component', () => {
         useStateMock.mockImplementation(init => [init, setState]);
         useTranslationMock.mockImplementation(() => ({t: jest.fn()}));
 
-        render(<App />);
+        const view = renderWithProviders(<App />, {preloadedState: {user: {loggedUser: null, apiToken: null}}});
 
         const divAlerts = await screen.findAllByText('alerts here');
         expect(divAlerts.length).toBe(1);

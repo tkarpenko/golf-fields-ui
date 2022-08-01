@@ -5,8 +5,9 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { getLoggedUser } from './features/user/userServices';
 import { GetTranslation } from './app/staticFileRequests';
+import { useSelector } from "react-redux";
+import { selectUserToken } from './features/user/userSlice';
 import Layout from './routes/layout/layout';
 import Login from './routes/login/Login';
 import Alerts from './features/alert/Alerts';
@@ -18,13 +19,14 @@ export default function App() {
 
     const { t } = useTranslation(['common', 'login']);
     const [lang, setLang] = useState('');
+    const apiToken = useSelector(selectUserToken);
 
 
     useEffect(() => {
         if (lang !== i18next.language || lang === '') {
             loadLanguageFiles();
         }
-    }, [lang]);
+    }, [lang, apiToken]);
 
 
     async function loadLanguageFiles() {
@@ -33,14 +35,13 @@ export default function App() {
         setLang(i18next.language);
     }
 
-
     return (
         <div>
             <Alerts />
             
             <Routes>
 
-                <Route path="/" element={ ( getLoggedUser() == null ? (<Navigate to="/login" />) : (<Layout />) ) } />
+                <Route path="/" element={ ( apiToken == null ? (<Navigate to="/login" />) : (<Layout />) ) } />
                 <Route path="*" element={<div>{t('pageNotFound', {ns: 'common'})}</div>} />
                 <Route path="/login" element={<Login />} />
 

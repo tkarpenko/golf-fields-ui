@@ -25,11 +25,10 @@ export default function Login() {
 
     
     useEffect(() => {
-        console.log('in useEffect ', i18next.language, lang);
         if (lang !== i18next.language || lang === '') {
             loadLanguageFiles();
         }
-    }, [lang]);
+    }, [lang, apiToken]);
     
 
 
@@ -54,7 +53,7 @@ export default function Login() {
     }
 
     if (apiToken != null) {
-        return <Navigate to="/" replace={true} state={{ from: '/login' }} />;
+        return <Navigate to="/" state={{ from: '/login' }} />;
     }
 
     return (

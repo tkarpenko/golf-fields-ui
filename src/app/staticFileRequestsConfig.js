@@ -1,11 +1,8 @@
 import axios from 'axios';
-import environment from './environment';
-
 
 export function StaticFileRequestsConfig(dispatch, add) {
 
     const instance = axios.create({
-        baseURL: `${environment.settings.staticFilesEndpoint}`,
         timeout: 120000,
         withCredentials: false,
         headers: {

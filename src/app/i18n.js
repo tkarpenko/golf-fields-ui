@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import HttpApi from 'i18next-http-backend';
+// import HttpApi from 'i18next-http-backend';
 
 // i18n
 //   .use(initReactI18next) 
@@ -23,7 +23,7 @@ i18n
 .init({
   // partialBundledLanguages: true,
   // debug: true,
-  fallbackLng: "en",
+  fallbackLng: 'en',
   // react: {
   //   useSuspense: false
   // },
