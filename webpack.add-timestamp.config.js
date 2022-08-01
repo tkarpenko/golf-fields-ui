@@ -1,6 +1,4 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin');
-const path = require('path');
 
 module.exports = {
     entry: {},
@@ -12,7 +10,7 @@ module.exports = {
             dir: 'public',
             files: ['app.json'],
             rules: [{
-                search: /"buildTimeStamp": ""/ig,
+                search: /"buildTimeStamp": "\d*"/ig,
                 replace: `"buildTimeStamp": "${(new Date()).getTime()}"`
             }]
         }]),
