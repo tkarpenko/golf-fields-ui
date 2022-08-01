@@ -1,5 +1,5 @@
 {
-    "apiEndpoint": "http://API_HOST:5000",
+    "apiEndpoint": "http://localhost:5000",
     "apiVersion": "api/v1.0",
-    "buildTimeStamp": ""
+    "buildTimeStamp": "1659353610019"
 }
