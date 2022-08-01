@@ -42,8 +42,19 @@ export default function Login() {
 
     async function loadLanguageFiles() {
 
-        const loginJson = await GetTranslation(`/locales/${i18next.language}/login.json`);
-        i18next.addResourceBundle(i18next.language, 'login', loginJson);
+        const loginPromise = GetTranslation(`/locales/${i18next.language}/login.json`);
+        const commonPromise = GetTranslation(`/locales/${i18next.language}/common.json`);
+
+        loginPromise.then((loginJson) => {
+            i18next.addResourceBundle(i18next.language, 'login', loginJson);
+        });
+
+        commonPromise.then((commonJson) => {
+            i18next.addResourceBundle(i18next.language, 'common', commonJson);
+        });
+        
+        await Promise.all([loginPromise, commonPromise]);
+        
         setLang(i18next.language);
     }
 

@@ -22,6 +22,13 @@ export default function App() {
     const apiToken = useSelector(selectUserToken);
 
 
+    if (apiToken == null) {
+        document.body.classList.add('login-page');
+    } else {
+        document.body.classList.remove('login-page');
+    }
+
+
     useEffect(() => {
         if (lang !== i18next.language || lang === '') {
             loadLanguageFiles();
