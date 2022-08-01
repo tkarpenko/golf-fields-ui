@@ -19,6 +19,23 @@ const Styles = React.lazy(() => import('./app/Styles.js').then(module => ({
 const container = document.getElementById('root');
 const root = createRoot(container);
 
+console.log('UI updated');
+const readonlySettingsPromise1 = new Promise((resolve, reject) => {
+  const xmlhttp = new XMLHttpRequest();
+  const method = 'GET';
+  const url = 'http://10.102.190.212:5000/api/v1.0/User/TestGet';
+  xmlhttp.open(method, url, true);
+  xmlhttp.onload = () => {
+      if (xmlhttp.status === 200) {
+        console.log('CURL 1 = ', JSON.parse(xmlhttp.responseText));
+          resolve();
+      } else {
+        console.log('CURL 2 = ', JSON.parse(xmlhttp.responseText));
+          resolve();
+      }
+  };
+  xmlhttp.send();
+});
 
 
 const readonlySettingsPromise = new Promise((resolve, reject) => {
