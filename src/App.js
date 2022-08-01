@@ -23,7 +23,6 @@ export default function App() {
 
 
     if (apiToken == null) {
-        console.log('apiToken = ', apiToken);
         document.body.classList.add('login-page');
     } else {
         document.body.classList.remove('login-page');
