@@ -20,8 +20,8 @@ stages:
 
   jobs:
 
-  - job: Build & Test & Publish Artifacts
-    displayName: Build
+  - job: Build_Test_Publish
+    displayName: Build & Test & Publish Artifacts
     steps:
     - task: NodeTool@0
       inputs:
