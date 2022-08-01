@@ -20,7 +20,7 @@ stages:
 
   jobs:
 
-  - job: Build
+  - job: Build & Test & Publish Artifacts
     displayName: Build
     steps:
     - task: NodeTool@0
@@ -44,7 +44,7 @@ stages:
         customCommand: 'run test:ci'
 
     - task: PublishTestResults@2
-      displayName: 'supply npm test results to pipelines'
+      displayName: 'Publish Test Results'
       condition: succeededOrFailed()
       inputs:
         testResultsFiles: '$(System.DefaultWorkingDirectory)/build/reports/junit.xml'
