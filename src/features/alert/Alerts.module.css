@@ -1,0 +1,21 @@
+.alert {
+    position: fixed;
+    padding: 20px;
+    top: 30px;
+    left: 20px;
+    max-width: 100%;
+    width: 500px;
+    border-radius: 10px;
+    background-color: rgb(255, 98, 126);
+    text-align: right;
+}
+
+.alert ul {
+    color: #fff;
+    width: 100%;
+    text-align: left;
+}
+
+.alert_msg {
+    padding: 0 0 20px 0;
+}

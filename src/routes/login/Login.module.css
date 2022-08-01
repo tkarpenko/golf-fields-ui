@@ -1,0 +1,21 @@
+.login_container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    height: 100vh;
+}
+
+.login_fromWrapper {
+    width: 300px;
+    margin: 0 auto;
+    top: 50%;
+    position: relative;
+    transform: translate(0, -50%);
+}
+
+.login_title {
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+}

@@ -1,0 +1,66 @@
+body {
+  -webkit-font-smoothing: antialiased; /* to prevent flicker in Safari when CSS Transition works */
+  width: 100%;
+  font-size: 16px;
+}
+
+::-webkit-validation-bubble-message * { display: none; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+html, body, div, span, table, tr, td,
+article, p, aside, mark, nav, footer, header, section, ul, li, main,
+h1, h2, h3, h4, a, address, i, button, textarea, input {
+  font-style: normal;
+  vertical-align: baseline;
+  border: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-touch-callout:none;
+  -webkit-text-size-adjust:none;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-user-select:none;
+}
+
+:focus {
+  outline: 0;
+}

@@ -1,0 +1,40 @@
+.language_container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.language_button {
+    height: 45px;
+    width: 45px;
+    font-size: 24px;
+    color: rgba(0,0,0,0.4);
+}
+
+.language_dropdown_container {
+    position: relative;
+}
+
+.language_dropdown {
+    position: absolute;
+    bottom: 55px;
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0 1px 16px rgba(0,0,0,0.08);
+    display: none;
+}
+
+.language_dropdown.language_dropdownActive {
+    display: block;
+}
+
+.language_dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+.language_dropdown li:hover {
+    background-color: rgba(0,0,0,0.08);
+}

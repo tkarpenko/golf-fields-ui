@@ -1,0 +1,10 @@
+{
+    "error": {
+        "401": "Anauthorized",
+        "404": "Not Found",
+        "403": "Access Denied",
+        "notConnectedToServer": "Communication with the server could not be established"
+    },
+    "send": "Send",
+    "pageNotFound": "Page not Exists"
+}
