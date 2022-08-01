@@ -36,18 +36,18 @@ steps:
     # workingDir: ''
     customCommand: 'run test:ci'
 
-- task: PublishTestResults@2
-  displayName: 'supply npm test results to pipelines'
-  condition: succeededOrFailed()
-  inputs:
-    testResultsFiles: 'build/reports/junit.xml'
+# - task: PublishTestResults@2
+#   displayName: 'supply npm test results to pipelines'
+#   condition: succeededOrFailed()
+#   inputs:
+#     testResultsFiles: 'build/reports/junit.xml'
 
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage'
   inputs:
     codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.SourcesDirectory)/coverage/cobertura-coverage.xml'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
 
 - task: ArchiveFiles@2
   inputs:
