@@ -20,7 +20,7 @@
     "add_timestamp": "webpack --mode=production --config=webpack.add-timestamp.config.js",
     "build": "npm run add_timestamp && react-scripts build",
     "test": "react-scripts test",
-    "test:ci": "npm run test -- --watchAll=false --reporters=default --reporters=jest-junit --codeCoverage=true",
+    "test:ci": "npm run test -- --watchAll=false --reporters=default --reporters=jest-junit --coverage=true",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -58,5 +58,8 @@
     "titleTemplate": "{classname}-{title}",
     "ancestorSeparator": " › ",
     "usePathForSuiteName": "true"
+  },
+  "jest": {
+    "coverageReporters": ["text", "text-summary", "clover", "cobertura"]
   }
 }
