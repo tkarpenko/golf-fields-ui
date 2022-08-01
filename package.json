@@ -17,10 +17,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build_copy_lang_files": "webpack --mode=production --config=webpack.add-timestamp.config.js",
-    "build": "npm run build_copy_lang_files && react-scripts build",
+    "add_timestamp": "webpack --mode=production --config=webpack.add-timestamp.config.js",
+    "build": "npm run add_timestamp && react-scripts build",
     "test": "react-scripts test",
-    "test:ci": "npm run test -- --watchAll=false --reporters=default --reporters=jest-junit --code-coverage",
+    "test:ci": "npm run test -- --watchAll=false --reporters=default --reporters=jest-junit --codeCoverage=true",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
